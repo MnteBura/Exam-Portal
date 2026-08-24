@@ -1,5 +1,5 @@
 /* =========================================================
-   STUDENT PLATFORM HOME
+   FAMILY SCHOOL — STUDENT PLATFORM
 ========================================================= */
 
 
@@ -8,7 +8,9 @@
 ========================================================= */
 
 const siteHeader =
-    document.getElementById("siteHeader");
+    document.getElementById(
+        "siteHeader"
+    );
 
 
 window.addEventListener(
@@ -23,7 +25,9 @@ window.addEventListener(
                 "scrolled"
             );
 
-        } else {
+        }
+
+        else {
 
             siteHeader.classList.remove(
                 "scrolled"
@@ -40,10 +44,14 @@ window.addEventListener(
 ========================================================= */
 
 const menuButton =
-    document.getElementById("menuButton");
+    document.getElementById(
+        "menuButton"
+    );
 
 const navbar =
-    document.querySelector(".navbar");
+    document.querySelector(
+        ".navbar"
+    );
 
 
 if (menuButton) {
@@ -164,7 +172,7 @@ if (settingsOverlay) {
 
 
 /* =========================================================
-   DARK / LIGHT MODE
+   LIGHT / DARK MODE
 ========================================================= */
 
 const lightMode =
@@ -180,7 +188,7 @@ const darkMode =
 
 const savedTheme =
     localStorage.getItem(
-        "studentPlatformTheme"
+        "familySchoolTheme"
     );
 
 
@@ -206,7 +214,7 @@ if (lightMode) {
             );
 
             localStorage.setItem(
-                "studentPlatformTheme",
+                "familySchoolTheme",
                 "light"
             );
 
@@ -227,7 +235,7 @@ if (darkMode) {
             );
 
             localStorage.setItem(
-                "studentPlatformTheme",
+                "familySchoolTheme",
                 "dark"
             );
 
@@ -265,7 +273,7 @@ const zoomLevel =
 let currentZoom =
     Number(
         localStorage.getItem(
-            "studentPlatformZoom"
+            "familySchoolZoom"
         )
     ) || 100;
 
@@ -285,7 +293,7 @@ function updateZoom() {
 
 
     localStorage.setItem(
-        "studentPlatformZoom",
+        "familySchoolZoom",
         currentZoom
     );
 
@@ -357,7 +365,7 @@ updateZoom();
 
 
 /* =========================================================
-   MOTION TOGGLE
+   MOTION CONTROL
 ========================================================= */
 
 const motionToggle =
@@ -368,7 +376,7 @@ const motionToggle =
 
 const savedMotion =
     localStorage.getItem(
-        "studentPlatformMotion"
+        "familySchoolMotion"
     );
 
 
@@ -420,7 +428,7 @@ if (motionToggle) {
 
 
             localStorage.setItem(
-                "studentPlatformMotion",
+                "familySchoolMotion",
                 disabled
                     ? "off"
                     : "on"
@@ -559,7 +567,33 @@ sections.forEach(
 
 
 /* =========================================================
-   KEYBOARD SHORTCUT
+   FOCUS SESSION DEMO
+========================================================= */
+
+const focusButton =
+    document.getElementById(
+        "focusButton"
+    );
+
+
+if (focusButton) {
+
+    focusButton.addEventListener(
+        "click",
+        function () {
+
+            alert(
+                "Focus mode is ready to be developed as a full study tool."
+            );
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   ESCAPE KEY
 ========================================================= */
 
 document.addEventListener(
