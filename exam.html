@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Exam Portal</title>
+
+    <link rel="stylesheet" href="ex.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ================================= -->
+    <!-- SETTINGS BUTTON -->
+    <!-- ================================= -->
+
+    <button
+        id="settingsButton"
+        class="settings-button"
+        type="button"
+        aria-label="Open settings">
+
+        ⚙
+
+    </button>
+
+
+
+    <!-- ================================= -->
+    <!-- LOGIN PAGE -->
+    <!-- ================================= -->
+
+    <main class="login-page">
+
+
+        <section class="login-card">
+
+
+            <!-- LOGO -->
+
+            <div class="logo">
+
+                <span>
+                    MP
+                </span>
+
+            </div>
+
+
+            <h1>
+                Mintu Portal
+            </h1>
+
+
+            <p class="subtitle">
+
+                Welcome back.
+                Sign in to continue your examination.
+
+            </p>
+
+
+
+            <!-- ================================= -->
+            <!-- LOGIN FORM -->
+            <!-- ================================= -->
+
+            <form id="loginForm">
+
+
+                <!-- USERNAME -->
+
+                <div class="input-group">
+
+                    <label for="username">
+                        Username
+                    </label>
+
+
+                    <input
+                        type="text"
+                        id="username"
+                        name="username"
+                        placeholder="Enter your username"
+                        autocomplete="username"
+                        required
+                    >
+
+                </div>
+
+
+
+                <!-- PASSWORD -->
+
+                <div class="input-group">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+
+                    <div class="password-box">
+
+
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Enter your password"
+                            autocomplete="current-password"
+                            required
+                        >
+
+
+                        <button
+                            type="button"
+                            id="showPassword"
+                            aria-label="Show password">
+
+                            Show
+
+                        </button>
+
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- LOGIN ERROR / SUCCESS -->
+
+                <p
+                    id="loginError"
+                    class="error-message"
+                    aria-live="polite">
+                </p>
+
+
+
+                <!-- LOGIN BUTTON -->
+
+                <button
+                    type="submit"
+                    class="login-button">
+
+                    Sign In
+
+                </button>
+
+
+            </form>
+
+
+
+            <!-- ================================= -->
+            <!-- LOGIN FOOTER -->
+            <!-- ================================= -->
+
+            <div class="login-footer">
+
+                <p>
+                    Secure Examination System
+                </p>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+
+    <!-- ================================= -->
+    <!-- SETTINGS OVERLAY -->
+    <!-- ================================= -->
+
+    <div
+        id="settingsOverlay"
+        class="settings-overlay"
+        aria-hidden="true">
+    </div>
+
+
+
+    <!-- ================================= -->
+    <!-- SETTINGS PANEL -->
+    <!-- ================================= -->
+
+    <aside
+        id="settingsPanel"
+        class="settings-panel"
+        aria-label="Settings">
+
+
+        <!-- SETTINGS HEADER -->
+
+        <div class="settings-header">
+
+            <h2>
+                Settings
+            </h2>
+
+
+            <button
+                id="closeSettings"
+                type="button"
+                aria-label="Close settings">
+
+                ×
+
+            </button>
+
+        </div>
+
+
+
+        <!-- ================================= -->
+        <!-- APPEARANCE -->
+        <!-- ================================= -->
+
+        <div class="setting-section">
+
+
+            <h3>
+                Appearance
+            </h3>
+
+
+
+            <!-- LIGHT MODE -->
+
+            <button
+                id="lightMode"
+                type="button"
+                class="setting-option">
+
+
+                <span class="setting-icon">
+                    ☀️
+                </span>
+
+
+                <span>
+
+                    <strong>
+                        Light Mode
+                    </strong>
+
+                    <small>
+                        Use light appearance
+                    </small>
+
+                </span>
+
+
+            </button>
+
+
+
+            <!-- DARK MODE -->
+
+            <button
+                id="darkMode"
+                type="button"
+                class="setting-option">
+
+
+                <span class="setting-icon">
+                    🌙
+                </span>
+
+
+                <span>
+
+                    <strong>
+                        Dark Mode
+                    </strong>
+
+                    <small>
+                        Use dark appearance
+                    </small>
+
+                </span>
+
+
+            </button>
+
+
+        </div>
+
+
+
+        <!-- ================================= -->
+        <!-- ZOOM -->
+        <!-- ================================= -->
+
+        <div class="setting-section">
+
+
+            <h3>
+                Zoom
+            </h3>
+
+
+            <div class="zoom-controls">
+
+
+                <button
+                    id="zoomOut"
+                    type="button"
+                    aria-label="Zoom out">
+
+                    −
+
+                </button>
+
+
+                <span id="zoomLevel">
+                    100%
+                </span>
+
+
+                <button
+                    id="zoomIn"
+                    type="button"
+                    aria-label="Zoom in">
+
+                    +
+
+                </button>
+
+
+            </div>
+
+
+
+            <button
+                id="resetZoom"
+                type="button"
+                class="reset-button">
+
+                Reset Zoom
+
+            </button>
+
+
+        </div>
+
+
+    </aside>
+
+
+
+    <!-- ================================= -->
+    <!-- JAVASCRIPT -->
+    <!-- ================================= -->
+
+    <script src="ex script.js"></script>
+
+    <script src="settings.js"></script>
+
+
+</body>
+
+</html>

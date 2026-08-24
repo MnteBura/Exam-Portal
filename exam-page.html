@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Examination | Exam Portal</title>
+
+    <link
+        rel="stylesheet"
+        href="exam-page.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         FINAL 5 MINUTE WARNING
+    ====================================================== -->
+
+    <div
+        id="timeWarning"
+        class="time-warning">
+
+        <div class="warning-icon">
+            ⚠
+        </div>
+
+
+        <div class="warning-content">
+
+            <strong>
+                Less than 5 minutes remaining
+            </strong>
+
+            <span>
+                Please review your answers and submit your examination before time runs out.
+            </span>
+
+        </div>
+
+
+        <div
+            id="warningTimer"
+            class="warning-timer">
+
+            05:00
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         EXAM HEADER
+    ====================================================== -->
+
+    <header class="exam-header">
+
+
+        <div class="brand">
+
+            <div class="brand-logo">
+                EP
+            </div>
+
+            <span>
+                Exam Portal
+            </span>
+
+        </div>
+
+
+
+        <div class="exam-info">
+
+
+            <div class="question-progress">
+
+                Question
+
+                <strong id="currentQuestion">
+                    1
+                </strong>
+
+                of
+
+                <strong id="totalQuestions">
+                    0
+                </strong>
+
+            </div>
+
+
+
+            <div class="timer">
+
+                <span>
+                    ⏱
+                </span>
+
+                <strong id="timer">
+                    45:00
+                </strong>
+
+            </div>
+
+
+
+            <button
+                id="settingsButton"
+                class="settings-button"
+                type="button"
+                aria-label="Open settings">
+
+                ⚙
+
+            </button>
+
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         MAIN EXAM
+    ====================================================== -->
+
+    <main class="exam-container">
+
+
+        <!-- PROGRESS BAR -->
+
+        <div class="progress-bar">
+
+            <div id="progressFill"></div>
+
+        </div>
+
+
+
+        <!-- EXAM CONTENT -->
+
+        <section class="exam-content">
+
+
+            <!-- =================================================
+                 QUESTION CARD
+            ================================================== -->
+
+            <div class="question-card">
+
+
+                <div class="question-top">
+
+
+                    <div class="question-number">
+
+                        Question
+
+                        <span id="questionNumber">
+                            1
+                        </span>
+
+                    </div>
+
+
+
+                    <button
+                        id="flagButton"
+                        class="flag-button"
+                        type="button">
+
+                        <span>
+                            ⚑
+                        </span>
+
+                        Flag Question
+
+                    </button>
+
+
+                </div>
+
+
+
+                <h1 id="questionText">
+                    Your question will appear here.
+                </h1>
+
+
+
+                <div
+                    id="answers"
+                    class="answers">
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 SIDEBAR
+            ================================================== -->
+
+            <aside class="exam-sidebar">
+
+
+                <!-- EXAM STATUS -->
+
+                <div class="sidebar-card exam-status">
+
+
+                    <h3>
+                        Exam Status
+                    </h3>
+
+
+
+                    <div class="status-grid">
+
+
+                        <!-- ANSWERED -->
+
+                        <div class="status-item">
+
+                            <div class="status-icon answered-icon">
+                                ✓
+                            </div>
+
+
+                            <div>
+
+                                <span>
+                                    Answered
+                                </span>
+
+                                <strong id="answeredCount">
+                                    0
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- REMAINING -->
+
+                        <div class="status-item">
+
+                            <div class="status-icon remaining-icon">
+                                !
+                            </div>
+
+
+                            <div>
+
+                                <span>
+                                    Remaining
+                                </span>
+
+                                <strong id="remainingCount">
+                                    0
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- FLAGGED -->
+
+                        <div class="status-item">
+
+                            <div class="status-icon flagged-icon">
+                                ⚑
+                            </div>
+
+
+                            <div>
+
+                                <span>
+                                    Flagged
+                                </span>
+
+                                <strong id="flaggedCount">
+                                    0
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- QUESTION NAVIGATION -->
+
+                <div class="sidebar-card">
+
+
+                    <div class="questions-heading">
+
+                        <h3>
+                            Questions
+                        </h3>
+
+                        <span>
+                            Click to navigate
+                        </span>
+
+                    </div>
+
+
+
+                    <div
+                        id="questionNumbers"
+                        class="question-numbers">
+
+                    </div>
+
+
+                </div>
+
+
+            </aside>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             EXAM CONTROLS
+        ================================================== -->
+
+        <div class="exam-controls">
+
+
+            <button
+                id="previousButton"
+                class="secondary-button"
+                type="button">
+
+                ← Previous
+
+            </button>
+
+
+
+            <button
+                id="nextButton"
+                class="primary-button"
+                type="button">
+
+                Next →
+
+            </button>
+
+
+
+            <button
+                id="submitButton"
+                class="submit-button"
+                type="button">
+
+                Submit Exam
+
+            </button>
+
+
+        </div>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         SETTINGS OVERLAY
+    ====================================================== -->
+
+    <div
+        id="settingsOverlay"
+        class="settings-overlay">
+
+    </div>
+
+
+
+    <!-- =====================================================
+         SETTINGS PANEL
+    ====================================================== -->
+
+    <aside
+        id="settingsPanel"
+        class="settings-panel">
+
+
+        <div class="settings-header">
+
+            <h2>
+                Settings
+            </h2>
+
+
+            <button
+                id="closeSettings"
+                type="button">
+
+                ×
+
+            </button>
+
+        </div>
+
+
+
+        <!-- APPEARANCE -->
+
+        <div class="setting-section">
+
+            <h3>
+                Appearance
+            </h3>
+
+
+
+            <button
+                id="lightMode"
+                class="setting-option"
+                type="button">
+
+
+                <span class="setting-icon">
+                    ☀️
+                </span>
+
+
+                <span>
+
+                    <strong>
+                        Light Mode
+                    </strong>
+
+                    <small>
+                        Bright examination interface
+                    </small>
+
+                </span>
+
+
+            </button>
+
+
+
+            <button
+                id="darkMode"
+                class="setting-option"
+                type="button">
+
+
+                <span class="setting-icon">
+                    🌙
+                </span>
+
+
+                <span>
+
+                    <strong>
+                        Dark Mode
+                    </strong>
+
+                    <small>
+                        Dark examination interface
+                    </small>
+
+                </span>
+
+
+            </button>
+
+
+        </div>
+
+
+
+        <!-- ZOOM -->
+
+        <div class="setting-section">
+
+            <h3>
+                Zoom
+            </h3>
+
+
+
+            <div class="zoom-controls">
+
+
+                <button
+                    id="zoomOut"
+                    type="button">
+
+                    −
+
+                </button>
+
+
+                <span id="zoomLevel">
+                    100%
+                </span>
+
+
+                <button
+                    id="zoomIn"
+                    type="button">
+
+                    +
+
+                </button>
+
+
+            </div>
+
+
+
+            <button
+                id="resetZoom"
+                class="reset-button"
+                type="button">
+
+                Reset Zoom
+
+            </button>
+
+
+        </div>
+
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         SUBMIT CONFIRMATION MODAL
+    ====================================================== -->
+
+    <div
+        id="submitModal"
+        class="submit-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="submitModalTitle">
+
+
+        <div class="submit-modal-box">
+
+
+            <div class="submit-modal-icon">
+                ⚠
+            </div>
+
+
+
+            <h2 id="submitModalTitle">
+                Submit Examination?
+            </h2>
+
+
+
+            <p>
+                Are you sure you want to submit your examination?
+                Once submitted, you will not be able to change
+                your answers.
+            </p>
+
+
+
+            <!-- SUMMARY -->
+
+            <div class="submit-modal-summary">
+
+
+                <div>
+
+                    <span>
+                        Answered
+                    </span>
+
+                    <strong id="modalAnswered">
+                        0
+                    </strong>
+
+                </div>
+
+
+
+                <div>
+
+                    <span>
+                        Remaining
+                    </span>
+
+                    <strong id="modalRemaining">
+                        0
+                    </strong>
+
+                </div>
+
+
+
+                <div>
+
+                    <span>
+                        Flagged
+                    </span>
+
+                    <strong id="modalFlagged">
+                        0
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- ACTIONS -->
+
+            <div class="submit-modal-actions">
+
+
+                <button
+                    id="cancelSubmit"
+                    class="cancel-submit-button"
+                    type="button">
+
+                    Cancel
+
+                </button>
+
+
+
+                <button
+                    id="confirmSubmit"
+                    class="confirm-submit-button"
+                    type="button">
+
+                    Submit Exam
+
+                </button>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+
+         IMPORTANT:
+         exam-data.js MUST load before exam-page.js.
+    ====================================================== -->
+
+    <script src="exam-data.js"></script>
+
+    <script src="exam-page.js"></script>
+
+    <script src="settings.js"></script>
+
+
+</body>
+
+</html>

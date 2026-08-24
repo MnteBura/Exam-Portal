@@ -1,0 +1,604 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f5f7fb,
+            #eef4ff
+        );
+
+    color: #172033;
+
+    min-height: 100vh;
+
+}
+
+
+.results-container {
+
+    max-width: 850px;
+
+    margin: auto;
+
+    padding: 30px 20px 50px;
+
+}
+
+
+.results-header {
+
+    display: flex;
+
+    align-items: center;
+
+    margin-bottom: 30px;
+
+}
+
+
+.brand {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+}
+
+
+.brand-logo {
+
+    width: 42px;
+
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #4f46e5
+        );
+
+    color: white;
+
+    border-radius: 11px;
+
+    font-size: 14px;
+
+    box-shadow:
+        0 7px 18px
+        rgba(37, 99, 235, 0.25);
+
+}
+
+
+/* RESULT CARD */
+
+.results-card {
+
+    background: white;
+
+    border: 1px solid #e4e8ef;
+
+    border-radius: 22px;
+
+    padding: 45px;
+
+    text-align: center;
+
+    box-shadow:
+        0 20px 60px
+        rgba(15, 23, 42, 0.08);
+
+    animation:
+        cardEnter 0.5s ease;
+
+}
+
+
+@keyframes cardEnter {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(20px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+.success-icon {
+
+    width: 65px;
+
+    height: 65px;
+
+    margin:
+        0 auto 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #dcfce7;
+
+    color: #16a34a;
+
+    border-radius: 50%;
+
+    font-size: 30px;
+
+    font-weight: bold;
+
+}
+
+
+.small-title {
+
+    color: #2563eb;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.results-card h1 {
+
+    font-size: 32px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.subtitle {
+
+    color: #7b8494;
+
+    margin-bottom: 30px;
+
+}
+
+
+/* SCORE */
+
+.score-circle {
+
+    width: 170px;
+
+    height: 170px;
+
+    margin:
+        0 auto 20px;
+
+    border-radius: 50%;
+
+    background:
+        conic-gradient(
+            #2563eb,
+            #4f46e5,
+            #2563eb
+        );
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    animation:
+        scoreAppear 1s ease;
+
+}
+
+
+@keyframes scoreAppear {
+
+    from {
+
+        transform:
+            scale(0.5)
+            rotate(-90deg);
+
+        opacity: 0;
+
+    }
+
+    to {
+
+        transform:
+            scale(1)
+            rotate(0);
+
+        opacity: 1;
+
+    }
+
+}
+
+
+.score-circle::before {
+
+    content: "";
+
+    position: absolute;
+
+}
+
+
+.score-circle > div {
+
+    width: 145px;
+
+    height: 145px;
+
+    background: white;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+.score-circle strong {
+
+    font-size: 42px;
+
+}
+
+
+.score-circle span {
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    color: #64748b;
+
+}
+
+
+.results-card h2 {
+
+    font-size: 23px;
+
+    margin-bottom: 8px;
+
+}
+
+
+.score-text {
+
+    color: #7b8494;
+
+    margin-bottom: 30px;
+
+}
+
+
+/* STATISTICS */
+
+.result-stats {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 12px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.result-stat {
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 12px;
+
+    padding: 16px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 7px;
+
+}
+
+
+.result-stat span {
+
+    font-size: 12px;
+
+    color: #7b8494;
+
+}
+
+
+.result-stat strong {
+
+    font-size: 21px;
+
+}
+
+
+.stat-icon {
+
+    width: 35px;
+
+    height: 35px;
+
+    border-radius: 9px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-weight: bold;
+
+}
+
+
+.correct {
+
+    background: #dcfce7;
+
+    color: #16a34a;
+
+}
+
+
+.incorrect {
+
+    background: #fee2e2;
+
+    color: #dc2626;
+
+}
+
+
+.unanswered {
+
+    background: #fef3c7;
+
+    color: #d97706;
+
+}
+
+
+.flagged {
+
+    background: #ffedd5;
+
+    color: #ea580c;
+
+}
+
+
+/* SCORE DETAILS */
+
+.score-details {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 60px;
+
+    padding: 22px;
+
+    background: #f8fafc;
+
+    border-radius: 12px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.score-details div {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+
+}
+
+
+.score-details span {
+
+    color: #7b8494;
+
+    font-size: 12px;
+
+}
+
+
+.score-details strong {
+
+    font-size: 18px;
+
+}
+
+
+/* BUTTONS */
+
+.result-actions {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 12px;
+
+}
+
+
+.result-actions button {
+
+    padding: 14px 22px;
+
+    border-radius: 10px;
+
+    font-weight: bold;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+}
+
+
+.result-actions button:hover {
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+.primary-button {
+
+    background: #2563eb;
+
+    color: white;
+
+    border: none;
+
+    box-shadow:
+        0 6px 15px
+        rgba(37, 99, 235, 0.2);
+
+}
+
+
+.secondary-button {
+
+    background: white;
+
+    color: #475569;
+
+    border: 1px solid #dfe4eb;
+
+}
+
+
+footer {
+
+    text-align: center;
+
+    margin-top: 25px;
+
+    color: #9aa3b2;
+
+    font-size: 12px;
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+
+    .results-card {
+
+        padding: 30px 20px;
+
+    }
+
+
+    .results-card h1 {
+
+        font-size: 26px;
+
+    }
+
+
+    .result-stats {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .score-details {
+
+        gap: 30px;
+
+    }
+
+
+    .result-actions {
+
+        flex-direction: column;
+
+    }
+
+
+    .result-actions button {
+
+        width: 100%;
+
+    }
+
+}

@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard | Exam Portal</title>
+
+    <link rel="stylesheet" href="dash.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         TOP BAR
+    ========================================== -->
+
+    <header class="topbar">
+
+
+        <div class="brand">
+
+            <div class="brand-logo">
+                EP
+            </div>
+
+            <span>
+                Exam Portal
+            </span>
+
+        </div>
+
+
+        <div class="profile-area">
+
+
+            <div class="profile">
+
+                <div class="avatar">
+                    M
+                </div>
+
+
+                <div class="profile-info">
+
+                    <strong>
+                        Mintesinot
+                    </strong>
+
+                    <span>
+                        Student
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <button
+                id="settingsButton"
+                class="settings-button"
+                type="button"
+                aria-label="Open settings">
+
+                ⚙
+
+            </button>
+
+
+            <button
+                id="logoutButton"
+                class="logout-button"
+                type="button">
+
+                Logout
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================================
+         DASHBOARD
+    ========================================== -->
+
+    <main class="dashboard">
+
+
+        <!-- WELCOME -->
+
+        <section class="welcome">
+
+            <p class="small-title">
+                STUDENT DASHBOARD
+            </p>
+
+
+            <h1>
+                <p style="font-style: oblique;">Welcome to our exam portal</p>
+                
+            </h1>
+
+
+            <p>
+                Choose an examination, continue your progress,
+                or review your previous results.
+            </p>
+
+        </section>
+
+
+
+        <!-- =========================================
+             STATISTICS
+        ========================================== -->
+
+        <section class="stats">
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    📚
+                </div>
+
+                <div>
+
+                    <span>
+                        Available Exams
+                    </span>
+
+                    <strong id="availableExamCount">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    📝
+                </div>
+
+                <div>
+
+                    <span>
+                        Total Questions
+                    </span>
+
+                    <strong id="totalQuestionCount">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    🏆
+                </div>
+
+                <div>
+
+                    <span>
+                        Exams Completed
+                    </span>
+
+                    <strong id="completedExamCount">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =========================================
+             AVAILABLE EXAMS
+        ========================================== -->
+
+        <section class="exam-section">
+
+
+            <div class="section-heading">
+
+                <div>
+
+                    <p class="small-title">
+                        AVAILABLE EXAMS
+                    </p>
+
+                    <h2>
+                        Choose Your Examination
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="examList"
+                class="exam-list">
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =========================================
+             EXAM HISTORY
+        ========================================== -->
+
+        <section class="history-section">
+
+
+            <div class="section-heading">
+
+                <div>
+
+                    <p class="small-title">
+                        EXAM HISTORY
+                    </p>
+
+                    <h2>
+                        Previous Results
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="examHistory"
+                class="exam-history">
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================================
+         SETTINGS OVERLAY
+    ========================================== -->
+
+    <div
+        id="settingsOverlay"
+        class="settings-overlay">
+    </div>
+
+
+
+    <!-- =========================================
+         SETTINGS PANEL
+    ========================================== -->
+
+    <aside
+        id="settingsPanel"
+        class="settings-panel">
+
+
+        <div class="settings-header">
+
+            <h2>
+                Settings
+            </h2>
+
+
+            <button
+                id="closeSettings"
+                type="button">
+
+                ×
+
+            </button>
+
+        </div>
+
+
+
+        <!-- APPEARANCE -->
+
+        <div class="setting-section">
+
+            <h3>
+                Appearance
+            </h3>
+
+
+            <button
+                id="lightMode"
+                class="setting-option"
+                type="button">
+
+                <span class="setting-icon">
+                    ☀️
+                </span>
+
+                <span>
+
+                    <strong>
+                        Light Mode
+                    </strong>
+
+                    <small>
+                        Bright interface
+                    </small>
+
+                </span>
+
+            </button>
+
+
+
+            <button
+                id="darkMode"
+                class="setting-option"
+                type="button">
+
+                <span class="setting-icon">
+                    🌙
+                </span>
+
+                <span>
+
+                    <strong>
+                        Dark Mode
+                    </strong>
+
+                    <small>
+                        Dark interface
+                    </small>
+
+                </span>
+
+            </button>
+
+        </div>
+
+
+
+        <!-- ZOOM -->
+
+        <div class="setting-section">
+
+            <h3>
+                Zoom
+            </h3>
+
+
+            <div class="zoom-controls">
+
+                <button
+                    id="zoomOut"
+                    type="button">
+
+                    −
+
+                </button>
+
+
+                <span id="zoomLevel">
+                    100%
+                </span>
+
+
+                <button
+                    id="zoomIn"
+                    type="button">
+
+                    +
+
+                </button>
+
+            </div>
+
+
+            <button
+                id="resetZoom"
+                class="reset-button"
+                type="button">
+
+                Reset Zoom
+
+            </button>
+
+        </div>
+
+
+    </aside>
+
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+    <footer>
+
+        <p>
+            © 2026 Exam Portal • Secure Examination System
+        </p>
+
+    </footer>
+
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+
+    <script src="exam-data.js"></script>
+
+    <script src="dash.js"></script>
+
+    <script src="settings.js"></script>
+
+
+</body>
+
+</html>
